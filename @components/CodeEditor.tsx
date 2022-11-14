@@ -13,10 +13,10 @@ export interface CodeEditorProps extends Omit<TextareaCodeEditorProps, 'onChange
 }
 
 const style = css`
-  width: 450px;
+  width: 480px;
   margin: 16px;
   min-height: 700px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5;
   font-family: ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace;
 `
