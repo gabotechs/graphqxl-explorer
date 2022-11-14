@@ -10,4 +10,4 @@ if ! yum -y update &> /dev/null; then
 fi
 
   echo "yum is available, installing dependencies..."
-yum install libuuid-devel libmount-devel
+yum install glibc libuuid-devel libmount-devel
