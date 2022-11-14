@@ -1,3 +1,33 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "standard-with-typescript",
+    "plugin:react-hooks/recommended"
+  ],
+  "ignorePatterns": [
+    "src/generated/**",
+    "next.config.js"
+  ],
+  "parserOptions": {
+    "project": "tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/space-infix-ops": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/prefer-optional-chain": "off",
+    "@typescript-eslint/return-await": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "object-shorthand": "off"
+  }
 }
