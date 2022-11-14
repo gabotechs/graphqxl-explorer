@@ -13,7 +13,7 @@ echo "yum is available, we are in centos, let the party begin..."
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source "$HOME/.cargo/env"
 
-yum install -y jq
+yum install -y jq wget
 VERSION=$(cat node_modules/node-graphqxl/package.json | jq .version -r)
 
 wget "https://github.com/gabotechs/graphqxl/archive/refs/tags/v$VERSION.tar.gz"
