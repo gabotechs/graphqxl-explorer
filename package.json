@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "yarn postinstall && next build",
+    "build": "./prebuild.sh && next build",
     "start": "next start",
     "lint": "eslint pages",
     "postinstall": "cp node_modules/node-graphqxl/graphqxl public/graphqxl"
