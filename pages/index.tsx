@@ -43,6 +43,7 @@ function HomePage (): ReactElement {
     if (timeout.current != null) {
       clearTimeout(timeout.current)
     }
+    if (code === '') return
 
     const abortController = new AbortController()
     timeout.current = setTimeout(() => {
