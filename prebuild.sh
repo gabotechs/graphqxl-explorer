@@ -10,7 +10,7 @@ fi
 
 echo "yum is available, we are in centos, let the party begin..."
 
-curl https://sh.rustup.rs -sSf | sh
+curl https://sh.rustup.rs -sSf | sh -s -- -y
 source "$HOME/.cargo/env"
 
 yum install -y jq
