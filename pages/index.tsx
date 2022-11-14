@@ -3,10 +3,8 @@ import React, { ReactElement, useEffect, useRef } from 'react'
 import CenteredColumn from '../@components/CenteredColumn'
 import CenteredRow from '../@components/CenteredRow'
 import CodeEditor from '../@components/CodeEditor'
-import GraphQXLLogo from '../@assets/graphqxl-name.svg'
-import GraphQLLogo from '../@assets/graphql-name.svg'
-import CoveredImage from '../@components/CoveredImage'
 import { useRouter } from 'next/router'
+import GraphQXLLogo from '../@components/GraphQXLLogo'
 import fromBase64 from '../@utils/base64'
 import { compile } from './api/compileClient'
 
@@ -58,10 +56,7 @@ function HomePage (): ReactElement {
   return (
     <CenteredRow style={{ marginTop: 16 }}>
       <CenteredColumn>
-        <CoveredImage
-          src={GraphQXLLogo}
-          size={[250, 100]}
-        />
+        <GraphQXLLogo/>
         <CodeEditor
           value={code}
           placeholder="Please enter GraphQXL code."
@@ -69,10 +64,7 @@ function HomePage (): ReactElement {
         />
       </CenteredColumn>
       <CenteredColumn>
-        <CoveredImage
-          src={GraphQLLogo}
-          size={[250, 100]}
-        />
+        <GraphQXLLogo hideX/>
         <CodeEditor
           value={compiled}
           placeholder="This is the compiled GraphQL"
