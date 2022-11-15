@@ -1,5 +1,5 @@
 import { ParsedUrlQuery } from 'querystring'
-import React, { ReactElement, useEffect, useRef } from 'react'
+import React, { ReactElement, useEffect, useRef, useState } from 'react'
 import CenteredColumn from '../@components/CenteredColumn'
 import CenteredRow from '../@components/CenteredRow'
 import CodeEditor from '../@components/CodeEditor'
@@ -30,6 +30,8 @@ function HomePage (): ReactElement {
   const timeout = useRef<NodeJS.Timeout|null>(null)
   const router = useRouter()
 
+  const [loading, setLoading] = useState(false)
+
   const [code, setCode] = React.useState('')
   const [compiled, setCompiled] = React.useState('')
 
@@ -41,13 +43,17 @@ function HomePage (): ReactElement {
     if (timeout.current != null) {
       clearTimeout(timeout.current)
     }
-    if (code === '') return
-
+    if (code === '') {
+      setLoading(false)
+      return
+    }
+    setLoading(true)
     const abortController = new AbortController()
     timeout.current = setTimeout(() => {
       void compile(code)
         .catch(err => err.toString())
         .then(setCompiled)
+        .finally(() => setLoading(false))
     }, TIMEOUT)
 
     return () => abortController.abort()
@@ -59,16 +65,15 @@ function HomePage (): ReactElement {
         <GraphQXLLogo/>
         <CodeEditor
           value={code}
-          placeholder="Please enter GraphQXL code."
-          onChange={setCode}
+          onChange={value => setCode(value ?? '')}
         />
       </CenteredColumn>
       <CenteredColumn>
         <GraphQXLLogo hideX/>
         <CodeEditor
+          loading={loading}
           value={compiled}
-          placeholder="This is the compiled GraphQL"
-          disabled={true}
+          options={{ readOnly: true }}
         />
       </CenteredColumn>
     </CenteredRow>
