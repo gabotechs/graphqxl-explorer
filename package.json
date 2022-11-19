@@ -18,7 +18,7 @@
     "monaco-editor": "^0.34.1",
     "next": "13.0.3",
     "next-remove-imports": "^1.0.8",
-    "node-graphqxl": "^0.36.0",
+    "node-graphqxl": "^0.38.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "uuid": "^9.0.0"
