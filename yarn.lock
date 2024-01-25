@@ -3467,7 +3467,7 @@ __metadata:
     monaco-editor: ^0.34.1
     next: 13.0.3
     next-remove-imports: ^1.0.8
-    node-graphqxl: ^0.40.0
+    node-graphqxl: ^0.40.1
     node-mocks-http: ^1.12.1
     react: 18.2.0
     react-dom: 18.2.0
@@ -5082,12 +5082,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-graphqxl@npm:^0.40.0":
-  version: 0.40.0
-  resolution: "node-graphqxl@npm:0.40.0"
+"node-graphqxl@npm:^0.40.1":
+  version: 0.40.1
+  resolution: "node-graphqxl@npm:0.40.1"
   bin:
     graphqxl: bin/graphqxl
-  checksum: 97dc7e60ed43e9274159cd02996dcf31c631e4fd5f93907337fe36b57f787235c77f84fe44b44097c282594106a650cbe3eaf9edcd20994e36b42821e5c5e609
+  checksum: 4b71623c9d9225e025edb4a5275d997ac8a638096a33ce5b633561a6e9dd89dabfd0069cc3ced2fb9c912113c8bf05f2f85c8594f7c0427d5f8ca0eecc147477
   languageName: node
   linkType: hard
 
